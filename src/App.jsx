@@ -9,24 +9,26 @@ import GyanBotWelcome from './Components/Welcome/GyanBotWelcome';
 import AsteroidSorterGame from './Components/PhaserGames/Class6/AsteroidSorter/AsteroidSorterGame';
 
 const App = () => {
-  // Shared state to store the student's name
-  const [studentName, setStudentName] = useState('');
+    // Shared state to store the student's name
+    const [studentName, setStudentName] = useState('');
 
-  return (
-    <HashRouter>
-      <Routes>
-        {/* The landing page is now the root route */}
-        <Route path="/" element={<LandingPage />} />
-        
-        {/* The login page is now at the /login path */}
-        <Route path="/login" element={<LoginPage setStudentName={setStudentName} />} />
+    return (
+        <HashRouter>
+            <Routes>
+                {/* The landing page is the root route */}
+                <Route path="/" element={<LandingPage />} />
+                
+                {/* The login page is at the /login path */}
+                <Route path="/login" element={<LoginPage setStudentName={setStudentName} />} />
 
-        <Route path="/welcome" element={<GyanBotWelcome name={studentName} />} />
-        
-        <Route path="/game/asteroid-sorter" element={<AsteroidSorterGame />} />
-      </Routes>
-    </HashRouter>
-  );
+                {/* The route for the welcome page, passing the student's name */}
+                <Route path="/welcome" element={<GyanBotWelcome name={studentName} />} />
+
+                {/* The route for the game component */}
+                <Route path="/game/asteroid-sorter" element={<AsteroidSorterGame />} />
+            </Routes>
+        </HashRouter>
+    );
 };
 
 export default App;
