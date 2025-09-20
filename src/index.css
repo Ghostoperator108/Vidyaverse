@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cosmic-background {
+    background-color: #0c0a1a;
+    background-image: radial-gradient(circle at 10% 20%, rgba(118, 7, 142, 0.2), transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.2), transparent 40%);
+}
+
+.glass-card {
+    background: rgba(22, 28, 51, 0.5);
+   
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.progress-bar-glow {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
+}
