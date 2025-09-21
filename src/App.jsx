@@ -11,6 +11,7 @@ import FoodExplorer from './Components/Class 6/Games/FoodExplorer/FoodExplorer';
 import GardenGobbleGame from './Components/Class 6/Games/GardenGobbleGame/GardenGobbleGame.jsx';
 import SourceSorterGame from "./Components/Class 6/Games/SourceSorterGame/SourceSorterGame";
 import GardenHarvestGame from "./Components/Class 6/Games/GardenHarvestGame/GardenHarvestGame.jsx";
+import TeacherDashboard from './TeacherDashboard/TeacherDashboard.jsx';
 
 
 
@@ -21,6 +22,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<WelcomePage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/teacher-dashboard" element={<TeacherDashboard/>}/>
                 <Route path="/dashboard" element={<StudentDashboard/>}/>
                 <Route path="/dashboard/first-page" element={<FirstPage/>}/>
                 <Route path='/dashboard/first-page/animal-diet-game' element={<AnimalDietGame/>}/>

@@ -12,6 +12,7 @@ const Navbar = () => {
                     {/* Right side: Navigation Links & Actions */}
                     <div className="flex items-center space-x-4">
                         {/* Example navigation links. Uncomment and use Link for SPA navigation. */}
+                        <Link to="/teacher-dashboard" className='text-gray-300 hover:text-white align-items-left'>Teacher</Link>
                         <Link to="/dashboard/first-page/animal-diet-game" className="text-gray-300 hover:text-white">A </Link>
                         <Link to="/dashboard/food-explorer" className="text-gray-300 hover:text-white">B</Link>
                         <Link to="/dashboard/first-page/dashboard/garden-gobble-game"
