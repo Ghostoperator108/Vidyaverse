@@ -3,30 +3,24 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Navbar/Navbar';
 
-const FirstPage = ({ onBackToDashboard }) => {
+const FirstPage = () => {
     const { t } = useTranslation();
 
-    const handleBackClick = () => {
-        if (onBackToDashboard) {
-            onBackToDashboard();
-        } else {
-            alert(t('back_to_dashboard')); // Fallback for demonstration
-        }
-    };
+    
 
     return (
         <div className="min-h-screen bg-gray-900 text-white font-sans p-4 sm:p-6 lg:p-8">
             <div className="container mx-auto">
                 <div className="mb-8">
-                    <button 
-                        onClick={handleBackClick} 
+                    <Link to='/dashboard'><button 
+                       
                         className="px-5 py-2 bg-cyan-600/80 text-white rounded-lg hover:bg-cyan-700 transition-colors shadow-md flex items-center gap-2"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         {t('back_to_dashboard')}
-                    </button>
+                    </button></Link>
                 </div>
                 <Navbar/>
 
