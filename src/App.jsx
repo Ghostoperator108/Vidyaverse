@@ -2,7 +2,7 @@ import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-// Import your new Layout component
+// Import your Layout component
 import Layout from './Components/Layout/Layout.jsx'; 
 
 import WelcomePage from './Components/WelcomePage';
@@ -20,14 +20,12 @@ function App() {
     return (
         <HashRouter>
             <Routes>
-                {/* Routes WITHOUT the language switcher */}
-                <Route path="/" element={<WelcomePage />} />
-                <Route path="/login" element={<LoginPage />} />
-
-                {/* Parent route that uses the Layout component */}
+                {/* Now, the Layout component wraps ALL routes.
+                  This ensures the LanguageSwitcher appears on every single page.
+                */}
                 <Route element={<Layout />}>
-                    {/* All nested routes will render inside the Layout's <Outlet> */}
-                    {/* This means they will all have the header with the language switcher */}
+                    <Route path="/" element={<WelcomePage />} />
+                    <Route path="/login" element={<LoginPage />} />
                     <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
                     <Route path="/dashboard" element={<StudentDashboard />} />
                     <Route path="/dashboard/first-page" element={<FirstPage />} />

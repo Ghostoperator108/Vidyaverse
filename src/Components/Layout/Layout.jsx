@@ -1,27 +1,25 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import LanguageSwitcher from '../Language/LanguageSwitcher';
+// The import path has been corrected to navigate up one level.
+import LanguageSwitcher from '/src/Components/Language/LanguageSwitcher';
 
- // Adjust the import path if needed
-
-
+/**
+ * A universal Layout component that renders the language switcher
+ * in the top-right corner of the screen for all pages.
+ */
 const Layout = () => {
   return (
-    <div>
-      {/* This header will appear on every page that uses this layout */}
-      <header style={{ padding: '1rem', backgroundColor: '#f0f0f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h3>Vidyaverse</h3>
+    <>
+      {/* This div places the switcher on top of all other content */}
+      <div className="absolute top-4 right-4 z-50">
         <LanguageSwitcher />
-      </header>
+      </div>
 
-      <hr />
-
-      {/* The <Outlet> component renders the current page's component */}
-      <main>
-        <Outlet />
-      </main>
-    </div>
+      {/* The rest of your page component will be rendered here */}
+      <Outlet />
+    </>
   );
 };
 
 export default Layout;
+
